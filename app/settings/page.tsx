@@ -40,6 +40,7 @@ export default function SettingsPage() {
 
     setPasswordLoading(true);
 
+    const supabase = createClient();
     const { error } = await supabase.auth.updateUser({ password: newPassword });
 
     if (error) {
